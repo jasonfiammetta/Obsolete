@@ -30,7 +30,7 @@ def scrape(links):
 
     print(f'finished; {len(archaic_words)} archaic words found in {time.time() - start} seconds')
 
-    p = Path(out / archaic_folder)
+    p = Path(out) / Path(archaic_folder)
     p.mkdir(exist_ok=True)
     file = (p / f"{letter}.txt").open("a")
     for a in archaic_words:
