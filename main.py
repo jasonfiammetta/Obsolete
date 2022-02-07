@@ -1,10 +1,14 @@
+import asyncio
 import crawler
 import scraper
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
+
+async def main():
     words = crawler.crawl()
     # file = open(fr"letter{letter}.txt", "a")
     # for a in final:
     #     file.write(a)
-    scraper.scrape(words)
+    await scraper.scrape(words)
+
+if __name__ == '__main__':
+    asyncio.run(main())
